@@ -1,0 +1,16 @@
+<a href="/songs/show"> Dashboard </a>
+<a href="/logout"> Log Out </a>
+<br>
+<h3> <%= current_user.first_name %>'s Playlist</h3>
+<table>
+<tr><th> Artist</th>
+<th> Title</th>
+<th> Times Added </th>
+</tr>
+<% @playlist.each do |play| %>
+<tr><td> <%= Song.find(play.songs_id).artist %> </td>
+<td> <%= Song.find(play.songs_id).title %></td>
+<td> <%= play.timesadded %></td>
+</tr>
+<% end %>
+</table>
